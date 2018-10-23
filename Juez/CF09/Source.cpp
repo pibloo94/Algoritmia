@@ -1,5 +1,6 @@
 //PABLO AGUDO BRUN
 
+//NOTA: reordenar primero pares y luego pares y redimensionalizar con .resize(n)
 
 #include <iostream>
 #include <fstream>
