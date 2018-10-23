@@ -25,21 +25,23 @@ bool estricCreciente(vector<int>& v) {
 }
 
 void resolver(vector<int>& v) {
-	std::vector<int> vaux;
+
 
 	if (estricCreciente) {
 
-		int i = 0;
-		while (i < v.size()) {
-			if (v[i]%2 == 0){
-				vaux.push_back(v[i]);
+		int i = 0, par = 0, n = v.size();
+		while (i < n) {
+			if (v[i] % 2 == 0) {
+				v.at(par) = v.at(i);
+				par++;
 			}
 			i++;
 		}
+		v.resize(par);
 	}
-
-	for (int j = 0; j < vaux.size(); j++) {
-		cout << vaux.at(j) << " ";
+	
+	for (int j = 0; j < v.size(); j++) {
+		cout << v.at(j) << " ";
 	}
 
 	cout << endl;
@@ -76,7 +78,7 @@ int main() {
 		resuelveCaso();
 	}
 
-	//system("PAUSE");
+	system("PAUSE");
 
 	return 0;
 }
