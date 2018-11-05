@@ -1,5 +1,9 @@
 //PABLO AGUDO BRUN
 
+//rehacer haciendo solo un bucle con i j donde i parte del inicio y j desde el final
+// a la izq de i todos positivos
+// a la der de j todos negativos
+// si son iguales se intercambian
 
 #include <iostream>
 #include <fstream>
