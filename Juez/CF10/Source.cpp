@@ -5,7 +5,7 @@
 #include <vector>
 
 using namespace std;
-
+//{P: true}
 void resolver(vector<int>& v) {
 	int maxPartidos = 0, nVeces = 0, nPartidos = 0;
 	int maxPartidosAux = 0, racha = 0, i = 0;
@@ -31,6 +31,12 @@ void resolver(vector<int>& v) {
 
 	cout << maxPartidos<< " " << nVeces << " " << racha << endl;
 }
+//todosPositivos(v,c,f): forall k: c <= k < f: v[k] > 0 
+
+//{Q: 
+//maxPartidos = max (p,q): 0 <= p <= q <= v.size() && todosPositivos(v,p,q): q-p
+//nVeces = #(p,q): 0 <= p <= q <= v.size() && todosPositivos(v,p,q): q-p = maxPartidos
+//forall p,q: v.size()-nVeces <= p <= q <= v.size() && todosPositivos(v,p,q): q-p < maxPartidos}
 
 void resuelveCaso(int n) {
 	//resuelve aqui tu caso
