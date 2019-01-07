@@ -32,7 +32,7 @@ void tratarSolucion(std::vector<int>& solucion, int& n) {
 	for (int i = 0; i < n; i++) {
 		x = elegirColor(solucion, i);
 
-		if(cumple){
+		if (cumple) {
 			cout << x;
 			cumple = false;
 		}
@@ -47,9 +47,9 @@ void tratarSolucion(std::vector<int>& solucion, int& n) {
 bool esValida(std::vector<int>& solucion, int& k) {
 	bool cumple = true;
 
-	for (int i = 0; i < k && cumple; i++) {
-		if ((solucion[i] == 2) && (solucion[i + 1] == 2)) {
-			cumple = false;
+	if (k >= 1) {
+		if (solucion[k] == 2 && solucion[k - 1] == 2) {
+			return false;
 		}
 	}
 
@@ -78,7 +78,8 @@ void resolver(
 						tratarSolucion(solucion, n);
 						exito = true;
 					}
-				}else {
+				}
+				else {
 					resolver(colores, solucion, contColores, marcaje, k + 1, n, exito);
 				}
 			}
@@ -116,7 +117,7 @@ bool resuelveCaso() {
 	}
 
 	if (colores[1] == 0) {
-		cout << "SIN SOLUCION" << endl;
+		exito = false;
 	}
 	else {
 		solucion[0] = 1;
@@ -124,6 +125,14 @@ bool resuelveCaso() {
 
 		if (contColores[1] == colores[1]) {
 			marcaje[1] = true;
+		}
+
+		if (contColores[0] == colores[0]) {
+			marcaje[0] = true;
+		}
+
+		if (contColores[2] == colores[2]) {
+			marcaje[2] = true;
 		}
 
 		if (n >= 2) {
@@ -157,4 +166,3 @@ int main() {
 
 	return 0;
 }
-
